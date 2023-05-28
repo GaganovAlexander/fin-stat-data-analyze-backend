@@ -8,8 +8,8 @@ ___
 ### For linux and macOS:
 Open **terminal** and run this command
 ```
-git clone https://github.com/GaganovAlexander/fin-stat-data-analize-backend &&
-cd ./fin-stat-data-analize-backend &&
+git clone https://github.com/GaganovAlexander/fin-stat-data-analyze-backend &&
+cd ./fin-stat-data-analyze-backend &&
 python3 -m venv venv &&
 source ./venv/bin/activate &&
 pip install -r requirements.txt
@@ -18,8 +18,8 @@ ___
 ### For Windows:
 Open **cmd** and run this commands one by one
 ```
-git clone https://github.com/GaganovAlexander/fin-stat-data-analize-backend
-cd ./fin-stat-data-analize-backend
+git clone https://github.com/GaganovAlexander/fin-stat-data-analyze-backend
+cd ./fin-stat-data-analyze-backend
 python3 -m venv venv
 venv\Scripts\activate.bat
 pip install -r requirements.txt
