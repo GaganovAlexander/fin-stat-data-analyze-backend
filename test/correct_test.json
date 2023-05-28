@@ -1,0 +1,71 @@
+{
+    "Years": [
+        2020
+    ],
+    "Datasets": [
+        {
+            "Year": 2020,
+            "RealIncome": 56301,
+            "TargetIncome": 61519,
+            "AverageIncome": 4692,
+            "IncomePercent": 92,
+            "ByMonths": {
+                "Jan": 5493,
+                "Feb": 5035,
+                "Mar": 4577,
+                "Apr": 4577,
+                "May": 4577,
+                "Jun": 4577,
+                "Jul": 4577,
+                "Aug": 4577,
+                "Sep": 4577,
+                "Oct": 4577,
+                "Nov": 4577,
+                "Dec": 4577
+            },
+            "Items": [
+                {
+                    "Name": "Licensing",
+                    "QuantityPercentage": 100,
+                    "Quantity": 42792,
+                    "Income": 56301,
+                    "IncomePercentage": 100,
+                    "IncomeBreakdowns": [
+                        {
+                            "Name": "Software Metered License",
+                            "Income": 56301,
+                            "IncomePercentage": 100
+                        }
+                    ]
+                }
+            ],
+            "OperatingProfits": {
+                "Total": 11260,
+                "ByMonths": {
+                    "Jan": 1099,
+                    "Feb": 1007,
+                    "Mar": 915,
+                    "Apr": 915,
+                    "May": 915,
+                    "Jun": 915,
+                    "Jul": 915,
+                    "Aug": 915,
+                    "Sep": 915,
+                    "Oct": 915,
+                    "Nov": 915,
+                    "Dec": 915
+                }
+            },
+            "MarketingStrategies": {
+                "B2B": [
+                    37992,
+                    67
+                ],
+                "B2C": [
+                    18309,
+                    33
+                ]
+            }
+        }
+    ]
+}
