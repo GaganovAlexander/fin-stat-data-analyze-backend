@@ -27,7 +27,7 @@ pip install -r requirements.txt
 ___
 ## Run
 ___
-**Before running there and in test part you should always activate venv by running tis command in the project directory**
+**Before running there and in test part you should always activate venv by running this command in the project directory**
 ### For Windows
 ```
 ./venv/bin/activate.bat
@@ -52,7 +52,7 @@ python3 ./test/test.py
 ```
 On success you will create **test.json** file in the **test/** directory and this file should be simmilar to **correct_test.json** file in the same directory
 
-In there any other case, that means that you did something wrong from previous commands
+If there any other case, that means that you did something wrong from previous steps
 ___
 ## .json file from api structure
 ```
