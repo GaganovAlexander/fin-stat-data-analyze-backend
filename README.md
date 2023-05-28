@@ -1,4 +1,4 @@
-# Financial data simple analize and backend api
+# Financial data simple analyze and backend api
 ___
 ## Installation
 If you are using **linux** or **macOS**, you probably **already have** git and python
@@ -6,7 +6,7 @@ If you are using **linux** or **macOS**, you probably **already have** git and p
 2. [Python3.10+](https://www.python.org/downloads/)
 ___
 ### For linux and macOS:
-Open **terminal** and run this command()
+Open **terminal** and run this command
 ```
 git clone https://github.com/GaganovAlexander/fin-stat-data-analize-backend &&
 cd ./fin-stat-data-analize-backend &&
@@ -26,6 +26,7 @@ pip install -r requirements.txt
 ```
 ___
 ## Run
+___
 **Before running there and in test part you should always activate venv by running tis command in the project directory**
 ### For Windows
 ```
@@ -35,6 +36,7 @@ ___
 ```
 source ./venv/bin/activate
 ```
+___
 To run app use this command in project directory
 ```
 gunicorn -b 127.0.0.1:8001 app:app
@@ -44,11 +46,11 @@ ___
 Make keyboard interrupt(press **ctrl+C** in the command line)
 ___
 ## Test
-For tasting if everything is OK, you can run this from project directory while app is running
+For testing if everything is OK, you can run this from project directory while app is running
 ```
 python3 ./test/test.py
 ```
-On success you will create **test.json** file in the test/ directory and this file should be simmilar to correct_test.json file in the same directory
+On success you will create **test.json** file in the **test/** directory and this file should be simmilar to **correct_test.json** file in the same directory
 
 In there any other case, that means that you did something wrong from previous commands
 ___
@@ -84,7 +86,7 @@ ___
                     "IncomePercentage": number, 
                     "IncomeBreakdowns": [
                         // There will be one or multiple identically structured objects
-                        // if IncomeBreakdown name is identical to item name, there will be empty
+                        // If IncomeBreakdown name is identical to item name, there will be empty
                         {
                             "Name": string,
                             "Income": number, // ~10-100k
