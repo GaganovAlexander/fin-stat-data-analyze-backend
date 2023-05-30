@@ -36,8 +36,9 @@ def analyze_excel(excel_file: BufferedReader):
         # IncomeSources is a list of similar objects where each one represents one income source
         items = []
         # Fiestly we will create each object and calculate counts of operations right away
+        current_year_counts = current_year.Counts.sum()
         for counts in current_year.loc[:, ['Income sources', 'Counts']].groupby('Income sources').sum('Counts').to_dict()['Counts'].items():
-            items.append({'Name': counts[0], 'QuantityPercentage': round(counts[1]/current_year.Counts.sum() * 100), 'Quantity': round(counts[1])})
+            items.append({'Name': counts[0], 'QuantityPercentage': round(counts[1]/current_year_counts * 100), 'Quantity': round(counts[1])})
 
         # Then we will calculate income and its income percentage for each income source
         current_year_income = current_year.Income.sum()
@@ -52,7 +53,7 @@ def analyze_excel(excel_file: BufferedReader):
             items[j]['IncomeBreakdowns'] = []
             if not items[j]['Name'] == income_breakdowns[0][0]:
                 for l in income_breakdowns:
-                    items[j]['IncomeBreakdowns'].append({'Name': l[0], 'Income': round(l[1]), 'IncomePercentage': round(l[1]/current_year.Income.sum() * 100)})
+                    items[j]['IncomeBreakdowns'].append({'Name': l[0], 'Income': round(l[1]), 'IncomePercentage': round(l[1]/current_year_income * 100)})
         
         # Now we will calculate operations profits for all year
         total_data[i]['OperatingProfits'] = {}
@@ -64,10 +65,14 @@ def analyze_excel(excel_file: BufferedReader):
 
         # And lastly calculate marketing strategies abcolute and procentage income values
         total_data[i]['MarketingStrategies'] = {}
-        for j in current_year.loc[:, ['Income', 'Marketing Strategies']].groupby('Marketing Strategies').sum('Income').to_dict()['Income'].items():
-            total_data[i]['MarketingStrategies'][j[0]] = [round(j[1]), round(j[1] / current_year.Income.sum() * 100)]
+        for income in current_year.loc[:, ['Marketing Strategies', 'Income']].groupby('Marketing Strategies').sum('Income').to_dict()['Income'].items():
+            total_data[i]['MarketingStrategies'][income[0]] = [round(income[1]), round(income[1]/current_year_income  * 100)]
 
     # Before returning, adding list of all included year
     json_res = {'Years': excel.Year.unique().tolist(), 'Datasets': total_data}
     # return as json due to the frontender's request
     return dumps(json_res, indent=4)
+
+if __name__ == '__main__':
+    with open('../Downloads/example-data.xlsx', 'rb') as f:
+        print(analyze_excel(f))
