@@ -72,7 +72,3 @@ def analyze_excel(excel_file: BufferedReader):
     json_res = {'Years': excel.Year.unique().tolist(), 'Datasets': total_data}
     # return as json due to the frontender's request
     return dumps(json_res, indent=4)
-
-if __name__ == '__main__':
-    with open('../Downloads/example-data.xlsx', 'rb') as f:
-        print(analyze_excel(f))
