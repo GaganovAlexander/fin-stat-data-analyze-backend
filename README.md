@@ -18,8 +18,8 @@ ___
 ### For Windows:
 Open **cmd** and run this commands one by one
 ```
-git clone https://github.com/GaganovAlexander/fin-stat-data-analyze-backend
-cd ./fin-stat-data-analyze-backend
+git clone https:\\github.com\GaganovAlexander\fin-stat-data-analyze-backend
+cd .\fin-stat-data-analyze-backend
 python3 -m venv venv
 venv\Scripts\activate.bat
 pip install -r requirements.txt
@@ -30,7 +30,7 @@ ___
 **Before running there and in test part you should always activate venv by running this command in the project directory**
 ### For Windows
 ```
-./venv/bin/activate.bat
+.\venv\Scripts\activate.bat
 ```
 ### For linux and macOS
 ```
