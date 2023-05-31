@@ -15,8 +15,7 @@ def excel_upload():
     try:
         # And trying to analyze it
         result = analyze_excel(data)
-    except Exception as e:
-        print(e)
+    except:
         # If there is any error, that means that the file is corrupted or invalidly structured
         return "Invalid or corrupted excel file", 400
     # If everything is OK, return the result with jsonify(because json.dumps just create json-like string)
