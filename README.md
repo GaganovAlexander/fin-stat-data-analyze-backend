@@ -57,66 +57,66 @@ ___
 ## .json file from api structure
 ```js
 {
-    "Years": [
+    Years: [
         // It's a list of years as numbers, example: [2020, 2021]
         number,
     ],
-    "Datasets": [
+    Datasets: [
         // There will be one or multiple identically structured objects
         // in the order of the "Years" list
         {
-            "Year": number,
+            Year: number,
             // Here and below if you see a number with <, > or ~,
             // it represents usual amount
             // Big number on the left
-            "RealIncome": number, // >100k
+            RealIncome: number, // >100k
             // Under big number on the left
-            "TargetIncome": number, // >100k 
+            TargetIncome: number, // >100k 
             // Upper right number
-            "AverageIncome": number, // ~100k
+            AverageIncome: number, // ~100k
             // Number inside the main bubble
-            "IncomePercent": number, // here and below percent(age) will be 0-100
+            IncomePercent: number, // here and below percent(age) will be 0-100
             // Income by monts for left area chart
-            "ByMonths": {
+            ByMonths: {
                 // Contain all months incomes
-                "monthName": number, // ~100k
+                monthName: number, // ~100k
             },
-            "Items": [
+            Items: [
                 // There will be one or multiple identically structured objects
                 {
-                    "Name": string,
+                    Name: string,
                     // Quantity fields are for left unordered list
-                    "QuantityPercentage": number,
-                    "Quantity": number, // <100k
+                    QuantityPercentage: number,
+                    Quantity: number, // <100k
                     // Income fields are for big(not main) bubbles
-                    "Income": number, // ~100k 
-                    "IncomePercentage": number, 
+                    Income: number, // ~100k 
+                    IncomePercentage: number, 
                     // IncomeBreakdowns are for child small bubbles
-                    "IncomeBreakdowns": [
+                    IncomeBreakdowns: [
                         // There will be one or multiple identically structured objects
                         // If IncomeBreakdown name is identical to item name, there will be empty
                         {
-                            "Name": string,
-                            "Income": number, // ~10-100k
-                            "IncomePercentage": number
+                            Name: string,
+                            Income: number, // ~10-100k
+                            IncomePercentage: number
                         },
                     ]
                 },
             ],
             // That is for right horizontal bar chart
-            "OperatingProfits": {
-                "Total": number, // >100k
-                "ByMonths": {
-                    "monthName": number, // ~10k
+            OperatingProfits: {
+                Total: number, // >100k
+                ByMonths: {
+                    monthName: number, // ~10k
                 }
             },
             // That is for left doughnut chart
-            "MarketingStrategies": {
-                "B2B": [
+            MarketingStrategies: {
+                B2B: [
                     number, // Absolute value of income >100k
                     number // Percentage value of income
                 ],
-                "B2C": [
+                B2C: [
                     // Similar to B2B
                     number,
                     number
@@ -125,4 +125,8 @@ ___
         },
     ]
 }
+```
+### If comething went wrong during data analysis(usualy it means that excel file had invalid structure), you will receive
+```js
+Response("Invalid or corrupted excel file", {status: 400})
 ```
