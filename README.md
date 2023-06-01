@@ -126,7 +126,7 @@ ___
     ]
 }
 ```
-### If comething went wrong during data analysis(usualy it means that excel file had invalid structure), you will receive
+### If something went wrong during data analysis(usually it means that excel file had invalid structure), you will receive
 ```js
 Response("Invalid or corrupted excel file", {status: 400})
 ```
