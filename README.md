@@ -20,8 +20,8 @@ Open **cmd** and run this commands one by one
 ```
 git clone https://github.com/GaganovAlexander/fin-stat-data-analyze-backend
 cd .\fin-stat-data-analyze-backend
-python3 -m venv venv
-venv\Scripts\activate.bat
+python -m venv venv
+venv\Scripts\activate
 pip install -r requirements.txt
 ```
 ___
